@@ -1,0 +1,21 @@
+diff --git a/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/native/container-executor/impl/utils/docker-util.c b/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/native/container-executor/impl/utils/docker-util.c
+index 580cd377d8..08b47241a0 100644
+--- a/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/native/container-executor/impl/utils/docker-util.c
++++ b/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/native/container-executor/impl/utils/docker-util.c
+@@ -1224,14 +1224,14 @@ static int check_privileges(const char *user) {
+     exit(INITIALIZE_USER_FAILED);
+   }
+ 
+-  int rc = getgrouplist(user, pw->pw_gid, groups, &ngroups);
++  int rc = getgrouplist(user, pw->pw_gid, (int *)groups, &ngroups);
+   if (rc < 0) {
+     groups = (gid_t *) alloc_and_clear_memory(ngroups, sizeof(gid_t));
+     if (groups == NULL) {
+       fprintf(ERRORFILE, "Failed to allocate buffer for group lookup for user %s.\n", user);
+       exit(OUT_OF_MEMORY);
+     }
+-    if (getgrouplist(user, pw->pw_gid, groups, &ngroups) == -1) {
++    if (getgrouplist(user, pw->pw_gid, (int *)groups, &ngroups) == -1) {
+       fprintf(ERRORFILE, "Fail to lookup groups for user %s.\n", user);
+       ret = 2;
+     }
