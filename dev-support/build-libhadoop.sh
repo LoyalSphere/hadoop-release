@@ -6,12 +6,29 @@
 #
 #    brew install \
 #        cmake \
-#        protobuf@2.5 \
 #        maven \
 #        openssl \
 #        snappy
 #    export OPENSSL_ROOT_DIR=`brew --prefix openssl`
-#    export HADOOP_PROTOC_PATH="$(brew --prefix protobuf@2.5)/bin/protoc"
+#
+# Hadoop 3.1.1 build is not compatible with latest protobuf compiler so we
+# build protobuf 2.5.0 from source.
+#
+#    export HADOOP_PROTOC_PATH="$HOME/.local/bin/protoc"
+#    if [ ! -f "$HADOOP_PROTOC_PATH" ]; then
+#        cd "$HOME/.local/var"
+#        curl -LO https://github.com/google/protobuf/releases/download/v2.5.0/protobuf-2.5.0.tar.gz
+#        tar xf protobuf-2.5.0.tar.gz
+#        cd protobuf-2.5.0
+#        ./autogen.sh
+#        ./configure \
+#            --disable-debug \
+#            --disable-dependency-tracking \
+#            --with-zlib \
+#            --prefix="$HOME/.local"
+#        make
+#        make install
+#    fi
 # 
 # On Linux, it's probably easier to copy from HDP distribution. If you really
 # want to, the following instructions work for Fedora 28.
@@ -26,20 +43,6 @@
 #        libtirpc-devel \
 #        maven \
 #        snappy-devel
-#
-#    # Hadoop 2.7.1 build is not compatible with latest protobuf compiler
-#    # so we build protobuf 2.5.0 from source.
-#    export HADOOP_PROTOC_PATH="$HOME/.local/bin/protoc"
-#    if [ ! -f "$HADOOP_PROTOC_PATH" ]; then
-#        cd "$HOME/.local/var"
-#        curl -LO https://github.com/google/protobuf/releases/download/v2.5.0/protobuf-2.5.0.tar.gz
-#        tar xf protobuf-2.5.0.tar.gz
-#        cd protobuf-2.5.0
-#        ./autogen.sh
-#        ./configure --prefix="$HOME/.local"
-#        make
-#        make install
-#    fi
 #
 #    # patch hadoop build to use libtirpc
 #    # - fatal error: rpc/types.h: No such file or directory
