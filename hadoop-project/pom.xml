@@ -69,7 +69,7 @@
 
     <!-- ProtocolBuffer version, used to verify the protoc version and -->
     <!-- define the protobuf JAR version                               -->
-    <protobuf.version>2.5.0</protobuf.version>
+    <protobuf.version>3.25.5</protobuf.version>
     <protoc.path>${env.HADOOP_PROTOC_PATH}</protoc.path>
 
     <zookeeper.version>3.4.6.2.6.5.0-292</zookeeper.version>
@@ -1201,8 +1201,8 @@
             </goals>
             <configuration>
               <target>
-                <mkdir dir="${test.build.dir}" />
-                <mkdir dir="${test.build.data}" />
+                <mkdir dir="${test.build.dir}"/>
+                <mkdir dir="${test.build.data}"/>
               </target>
             </configuration>
           </execution>
@@ -1384,7 +1384,7 @@
               <source>${javac.version}</source>
               <target>${javac.version}</target>
               <compilerArguments>
-                <Xlint />
+                <Xlint/>
                 <Xmaxwarns>9999</Xmaxwarns>
               </compilerArguments>
             </configuration>
