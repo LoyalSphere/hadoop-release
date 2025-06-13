@@ -408,7 +408,7 @@
       <dependency>
         <groupId>com.google.guava</groupId>
         <artifactId>guava</artifactId>
-        <version>11.0.2</version>
+        <version>32.0.0-android</version>
       </dependency>
       <dependency>
         <groupId>com.google.code.gson</groupId>
@@ -1201,8 +1201,8 @@
             </goals>
             <configuration>
               <target>
-                <mkdir dir="${test.build.dir}" />
-                <mkdir dir="${test.build.data}" />
+                <mkdir dir="${test.build.dir}"/>
+                <mkdir dir="${test.build.data}"/>
               </target>
             </configuration>
           </execution>
@@ -1384,7 +1384,7 @@
               <source>${javac.version}</source>
               <target>${javac.version}</target>
               <compilerArguments>
-                <Xlint />
+                <Xlint/>
                 <Xmaxwarns>9999</Xmaxwarns>
               </compilerArguments>
             </configuration>
