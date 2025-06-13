@@ -58,7 +58,7 @@
     <java.security.egd>file:///dev/urandom</java.security.egd>
 
     <!-- avro version -->
-    <avro.version>1.7.4</avro.version>
+    <avro.version>1.11.4</avro.version>
 
     <!-- jersey version -->
     <jersey.version>1.9</jersey.version>
@@ -69,7 +69,7 @@
 
     <!-- ProtocolBuffer version, used to verify the protoc version and -->
     <!-- define the protobuf JAR version                               -->
-    <protobuf.version>2.5.0</protobuf.version>
+    <protobuf.version>3.25.5</protobuf.version>
     <protoc.path>${env.HADOOP_PROTOC_PATH}</protoc.path>
 
     <zookeeper.version>3.4.6.2.6.5.0-292</zookeeper.version>
@@ -408,7 +408,7 @@
       <dependency>
         <groupId>com.google.guava</groupId>
         <artifactId>guava</artifactId>
-        <version>11.0.2</version>
+        <version>32.0.0-android</version>
       </dependency>
       <dependency>
         <groupId>com.google.code.gson</groupId>
@@ -448,7 +448,7 @@
       <dependency>
         <groupId>commons-codec</groupId>
         <artifactId>commons-codec</artifactId>
-        <version>1.4</version>
+        <version>1.14</version>
       </dependency>
       <dependency>
         <groupId>commons-net</groupId>
@@ -719,7 +719,7 @@
       <dependency>
         <groupId>org.slf4j</groupId>
         <artifactId>slf4j-log4j12</artifactId>
-        <version>1.7.10</version>
+        <version>1.7.34</version>
       </dependency>
       <dependency>
         <groupId>org.slf4j</groupId>
@@ -1201,8 +1201,8 @@
             </goals>
             <configuration>
               <target>
-                <mkdir dir="${test.build.dir}" />
-                <mkdir dir="${test.build.data}" />
+                <mkdir dir="${test.build.dir}"/>
+                <mkdir dir="${test.build.data}"/>
               </target>
             </configuration>
           </execution>
@@ -1384,7 +1384,7 @@
               <source>${javac.version}</source>
               <target>${javac.version}</target>
               <compilerArguments>
-                <Xlint />
+                <Xlint/>
                 <Xmaxwarns>9999</Xmaxwarns>
               </compilerArguments>
             </configuration>
