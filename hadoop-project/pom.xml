@@ -61,7 +61,7 @@
     <avro.version>1.7.4</avro.version>
 
     <!-- jersey version -->
-    <jersey.version>1.9</jersey.version>
+    <jersey.version>1.13</jersey.version>
 
     <!-- jackson versions -->
     <jackson.version>1.9.13</jackson.version>
@@ -1201,8 +1201,8 @@
             </goals>
             <configuration>
               <target>
-                <mkdir dir="${test.build.dir}" />
-                <mkdir dir="${test.build.data}" />
+                <mkdir dir="${test.build.dir}"/>
+                <mkdir dir="${test.build.data}"/>
               </target>
             </configuration>
           </execution>
@@ -1384,7 +1384,7 @@
               <source>${javac.version}</source>
               <target>${javac.version}</target>
               <compilerArguments>
-                <Xlint />
+                <Xlint/>
                 <Xmaxwarns>9999</Xmaxwarns>
               </compilerArguments>
             </configuration>
