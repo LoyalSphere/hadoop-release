@@ -870,7 +870,7 @@
       <dependency>
         <groupId>org.apache.bookkeeper</groupId>
         <artifactId>bookkeeper-server</artifactId>
-        <version>4.2.3</version>
+        <version>4.17.2</version>
         <scope>compile</scope>
       </dependency>
       <dependency>
@@ -1201,8 +1201,8 @@
             </goals>
             <configuration>
               <target>
-                <mkdir dir="${test.build.dir}" />
-                <mkdir dir="${test.build.data}" />
+                <mkdir dir="${test.build.dir}"/>
+                <mkdir dir="${test.build.data}"/>
               </target>
             </configuration>
           </execution>
@@ -1384,7 +1384,7 @@
               <source>${javac.version}</source>
               <target>${javac.version}</target>
               <compilerArguments>
-                <Xlint />
+                <Xlint/>
                 <Xmaxwarns>9999</Xmaxwarns>
               </compilerArguments>
             </configuration>
